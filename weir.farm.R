@@ -1,4 +1,5 @@
 ### Weir Farm Bioblitz Bacteria
+
 install.packages("ggplot2")
 install.packages("vegan")
 install.packages("ecodist")
@@ -13,16 +14,15 @@ library(RColorBrewer)
 # Read in data
 
 # Alpha diversity
+
 alpha <- read.csv(file="weir.farm.alpha.csv", header=T)
 
 # Beta diversity
 tyc <- read.csv(file="weir.farm.tyc3.csv", header=T, row.names = 1)
-jc <- read.csv(file="weir.farm.j3.csv", header=T)
+jc <- read.csv(file="weir.farm.j3.csv", header=T, row.names = 1)
 
 # Environmental data
 env <- read.csv(file="weir.farm.env.csv", header=T)
-
-# Join data
 
 
 ###
