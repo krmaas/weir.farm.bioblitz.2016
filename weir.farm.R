@@ -85,3 +85,14 @@ ggplot(tyc.points, aes(x=MDS1, y=MDS2))+
     theme_bw()+
     scale_color_brewer(palette="Spectral")
 ggsave(file="Bacterial_Community.jpg")
+
+
+jaccard.nms <- metaMDS(as.dist(jc), k=2, trymin=50, trymax=250, wascores=F)
+ordiplot(jc.nms)
+jc.points <- data.frame(jc.nms$points)
+ggplot(jc.points, aes(x=MDS1, y=MDS2))+
+    geom_point(aes(color=factor(env$Area), shape=factor(env$Site), size=3))+
+    theme_bw()+
+    scale_color_brewer(palette="Spectral")
+ggsave(file="Bacterial_Community_no_abundance.jpg")
+
